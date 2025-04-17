@@ -10,7 +10,7 @@
 ![](https://img.shields.io/badge/Python-181717?style=plastic&logo=python)
 ![](https://img.shields.io/badge/Author-Davide%20Piras%20-181717?style=plastic)
 ![](https://img.shields.io/badge/Installation-pip%20install%20coming_soon-181717?style=plastic)
-[![arXiv](https://img.shields.io/badge/arXiv-coming_soon-b31b1b.svg)](https://arxiv.org/abs/coming-soon)
+[![arXiv](https://img.shields.io/badge/arXiv-2504.10453-b31b1b.svg)](https://arxiv.org/abs//2504.10453)
 
 </div>
 
@@ -37,9 +37,24 @@ Feel free to [fork](https://github.com/dpiras/veloce/fork) this repository to wo
 
 ## Citation
 
-If you use veloce, please cite the corresponding paper (coming soon):
+If you use `veloce`, please cite the corresponding paper:
 
-     
+     @ARTICLE{Piras25,
+          author = {{Piras}, Davide and {Sorrenti}, Francesco and {Durrer}, Ruth and {Kunz}, Martin},
+          title = "{Anchors no more: Using peculiar velocities to constrain $H_0$ and the primordial Universe without calibrators}",
+          journal = {arXiv e-prints},
+          year = 2025,
+          month = apr,
+          eid = {arXiv:2504.10453},
+          pages = {arXiv:2504.10453},
+          doi = {10.48550/arXiv.2504.10453},
+          archivePrefix = {arXiv},
+          eprint = {2504.10453},
+          primaryClass = {astro-ph.CO},
+          adsurl = {https://ui.adsabs.harvard.edu/abs/2025arXiv250410453P},
+     }
+
+
 
 ## License
 
