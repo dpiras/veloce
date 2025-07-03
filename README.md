@@ -31,6 +31,10 @@ Under construction.
 
 Under construction.
 
+## Trained models
+
+You can find the available models in this folder (TBC). Training this model was done using [CosmoPower](https://github.com/alessiospuriomancini/cosmopower) and [CosmoPower-JAX](https://github.com/dpiras/cosmopower-jax), hence we are not sharing the training notebook here. [Reach out](https://github.com/dpiras/veloce/issues) if you would find it useful to train your own models!
+
 ## Contributing and contacts
 
 Feel free to [fork](https://github.com/dpiras/veloce/fork) this repository to work on it; otherwise, please [raise an issue](https://github.com/dpiras/veloce/issues) or contact [Davide Piras](mailto:dr.davide.piras@gmail.com).
