@@ -19,7 +19,7 @@ setup(
     url='https://github.com/dpiras/veloce',
     license='GNU General Public License v3.0 (GPLv3)',
     packages=find_packages(),
-    package_data= {'velocemu': ['trained_models/*']},    
+    package_data= {'velocemu': ['trained_models/*', 'mock_data/*']},    
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
@@ -31,6 +31,8 @@ setup(
                       'numpy',
                       'jax==0.4.35',
                       'cosmopower-jax',
-                      'tensorflow==2.13']
+                      'tensorflow==2.13',
+                      'tqdm',
+                      'corner']
                       )
 

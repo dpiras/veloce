@@ -4,3 +4,5 @@ numpy
 jax==0.4.35
 tensorflow==2.13
 cosmopower-jax
+tqdm
+corner
