@@ -165,3 +165,48 @@ def reconstruct_symmetric_matrix_from_lower_diagonal(array, len_matrix):
     reconstructed_matrix = reconstructed_matrix + reconstructed_matrix.T - jnp.diag(jnp.diag(reconstructed_matrix))
 
     return reconstructed_matrix
+
+def mu_estimator(z, mu, ceph, is_cal, H0, Omat, dM, no_dM=None):
+    """Estimator for the luminosity distance, taken from `scoutpip`"""
+    c = 299792.458  # speed of light in km/s
+
+    # calculate dl_mod and mu_mod in a vectorized manner
+    dl_mod = jnp.array([dl_monopole(z_i, H0, Omat) for z_i in z])
+    mu_mod = 5 * jnp.log10(dl_mod) + 25
+    
+    delta_mu=jnp.zeros(1701)
+
+    # determine delta_mu based on no_dM condition
+    if no_dM is not None:
+        delta_mu = mu - mu_mod
+    else:
+        delta_mu = jnp.where(is_cal == 1, mu + dM - ceph, mu + dM - mu_mod)
+
+    H_array=Hz(z, H0, Omat)
+
+    # numerator and denominator calculations
+    num = c * jnp.log(10)
+    den = 5 * (-1 + c * (1 + z)**2 / (dl_mod * H_array))
+
+    num_den=num/den
+
+    return num_den * delta_mu, num_den
+
+def jax_integration(f, a, b, n, args):
+    """
+    Simple manual implementation of numerical integration with JAX using trapezoidal rule.
+    """
+    x = jnp.linspace(a, b, n)
+    y = f(x, *args)
+    dx = (b - a) / (n - 1)
+    return jnp.sum((y[:-1] + y[1:]) * dx / 2)
+
+def integrand(z, H0, Omat):
+    return 1 / (H0 * jnp.sqrt(Omat * (1 + z) ** 3 + (1 - Omat)))
+
+def dl_monopole(z, H0, Omat):
+    """Simple integral of the monopole of the luminosity distance, in JAX"""
+    c = 299792.458
+    integral = jax_integration(integrand, 0.0, z, 1000, (H0, Omat))
+    return c * (1 + z) * integral
+    
