@@ -2,10 +2,22 @@ import jax.numpy as np
 import numpy
 from cosmopower_jax.cosmopower_jax import CosmoPowerJAX as CPJ
 from velocemu.utils import fz_jax
-
+# to deal with the pre-saved models 
+import pkg_resources
 
 class IntegralEmu:
-    def __init__(self, dataset, relative_path='./', prefix='velocemu/trained_models/dataset_pantheon_moreparams_larger_nonlin'):
+    def __init__(self, dataset, prefix='dataset_pantheon_moreparams_larger_nonlin'):
+        """Emulator for the velocity covariance. 
+        `dataset` has to be in the form
+        array([[z1, z1, 0.],
+               [z2, z1, a12],
+               [z2, z2, 0.],
+               [z3, z1, a13],
+               [z3, z2, a23],
+               [z3, z3, 0.],
+               [...],
+               ])
+        where zi corresponds to the redshuift of source i, and aij is the angle between source i and source j."""
         # extract unique rows and keep track of inverse indices
         self.unique_rows, self.inverse_indices = self._jax_unique(dataset)
         self.condition = self.unique_rows[:, 2] == 0  # check diagonal condition
@@ -14,11 +26,13 @@ class IntegralEmu:
         self.C = 1e-2
         self.C_diag = 1e-5
         
-        # load trained models 
-        self.cp_nn = CPJ(probe='custom', filepath=f'{relative_path}/{prefix}_offdiag.pkl')
+        # load trained models
+        model_path_offdiag = pkg_resources.resource_filename("velocemu", f"trained_models/{prefix}_offdiag.pkl")
+        model_path_diag = pkg_resources.resource_filename("velocemu", f"trained_models/{prefix}_diag.pkl")
+        self.cp_nn = CPJ(probe='custom', filepath=model_path_offdiag)
         self.model_parameters = ['z1', 'z2', 'alpha', 'Omat', 'H0', 'As']
         # same as before, so remove "_Z1"
-        self.cp_nn_diag = CPJ(probe='custom', filepath=f'{relative_path}/{prefix}_diag.pkl')
+        self.cp_nn_diag = CPJ(probe='custom', filepath=model_path_diag)
         self.model_parameters_diag = ['z1', 'Omat', 'H0', 'As']
         # decided to save these as it's just easier
         np.save('./test_unique_rows', self.unique_rows)
