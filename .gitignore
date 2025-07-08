@@ -3,3 +3,7 @@ dist
 *egg*
 *pycache*
 *.ipynb_checkpoints*
+
+# files when running notebooks
+notebooks/test*.npy
+
