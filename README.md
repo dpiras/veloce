@@ -15,7 +15,7 @@
 </div>
 
 
-Welcome to ``veloce``, the velocity power spectrum covariance emulator! We develop an emulator based on neural networks to accelerate the prediction of covariance matrices for different cosmologies in the context of supernovae studies. If you are interested and want to know more, [check out the paper](https://arxiv.org/abs/2504.10453), [raise an issue](https://github.com/dpiras/veloce/issues) or contact [Davide Piras](mailto:dr.davide.piras@gmail.com). 
+Welcome to ``veloce``, the velocity power spectrum covariance emulator! We use an emulator based on neural networks to accelerate the prediction of covariance matrices for different cosmologies in the context of supernovae studies. If you are interested and want to know more, [check out the paper](https://arxiv.org/abs/2504.10453), [raise an issue](https://github.com/dpiras/veloce/issues) or contact [Davide Piras](mailto:dr.davide.piras@gmail.com). 
 
 
 
