@@ -15,7 +15,7 @@
 </div>
 
 
-Welcome to ``veloce``, the velocity power spectrum covariance emulator! This repository and the corresponding package will be made publicly available upon publication of the corresponding paper. If you are interested in early access please [raise an issue](https://github.com/dpiras/veloce/issues) or contact [Davide Piras](mailto:dr.davide.piras@gmail.com). 
+Welcome to ``veloce``, the velocity power spectrum covariance emulator! We develop an emulator based on neural networks to accelerate the prediction of covariance matrices for different cosmologies in the context of supernovae studies. If you are interested and want to know more, [check out the paper](https://arxiv.org/abs/2504.10453), [raise an issue](https://github.com/dpiras/veloce/issues) or contact [Davide Piras](mailto:dr.davide.piras@gmail.com). 
 
 
 
@@ -38,11 +38,11 @@ To use the emulator and/or sample your supernovae posterior, follow these steps:
 
 ## Usage
 
-The latter option will also give you access to all [Jupyter notebooks](https://github.com/dpiras/VAExEDE/blob/main/notebooks/quickstart.ipynb), which include information on how to generate a single element of the covariance, use the emulator, and sample the posterior.
+Cloning the repository will also give you access to all [Jupyter notebooks](https://github.com/dpiras/veloce/notebooks/), which include information on how to [generate a single element of the covariance](https://github.com/dpiras/veloce/blob/main/notebooks/generate_single_element.ipynb), [use the emulator](https://github.com/dpiras/veloce/blob/main/notebooks/use_emulator.ipynb), and [sample the posterior](https://github.com/dpiras/veloce/blob/main/notebooks/sample.ipynb).
 
 ## Trained models
 
-You can find the available models in this folder (TBC), which will be updated when new models become available. Currently, we provide the models that lead to the final results of the paper, namely the nonlinear case with fixed $\sigma_{\rm u}$, but more models are in production. If you are interested in other models, please [reach out](https://github.com/dpiras/veloce/issues) or contact [Davide Piras](mailto:dr.davide.piras@gmail.com). Also note that it should be straightforward for you to train your own models using [CosmoPower](https://github.com/alessiospuriomancini/cosmopower).
+You can find the available models in [this folder](https://github.com/dpiras/veloce/tree/main/velocemu/trained_models), which will be updated when new models become available. Currently, we provide the model that leads to the final results of the paper, namely the nonlinear case with fixed $\sigma_{\rm u}$, but more models are in production. If you are interested in other models, please [reach out](https://github.com/dpiras/veloce/issues) or contact [Davide Piras](mailto:dr.davide.piras@gmail.com). Also note that it should be straightforward for you to train your own models using [CosmoPower](https://github.com/alessiospuriomancini/cosmopower), and then add them under [`velocemu/trained_models`](https://github.com/dpiras/veloce/velocemu/trained_models).
 
 ## Contributing and contacts
 
