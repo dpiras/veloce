@@ -21,19 +21,28 @@ Welcome to ``veloce``, the velocity power spectrum covariance emulator! This rep
 
 ## Installation
 
-Under construction.
+To use the emulator and/or sample your supernovae posterior, follow these steps:
+1. (optional) `conda create -n veloce python=3.11 jupyter` (create a custom `conda` environment with python 3.11) 
+2. (optional) `conda activate vveloce` (activate it)
+3. Install the package:
+
+        pip install velocemu
+        python -c 'import velocemu'
+
+   or alternatively, clone the repository and install it:
+
+        git clone https://github.com/dpiras/veloce.git
+        cd veloce
+        pip install . 
+        python -c 'import velocemu'
 
 ## Usage
 
-Under construction.
-
-## Example
-
-Under construction.
+The latter option will also give you access to all [Jupyter notebooks](https://github.com/dpiras/VAExEDE/blob/main/notebooks/quickstart.ipynb), which include information on how to generate a single element of the covariance, use the emulator, and sample the posterior.
 
 ## Trained models
 
-You can find the available models in this folder (TBC). Training this model was done using [CosmoPower](https://github.com/alessiospuriomancini/cosmopower) and [CosmoPower-JAX](https://github.com/dpiras/cosmopower-jax), hence we are not sharing the training notebook here. [Reach out](https://github.com/dpiras/veloce/issues) if you would find it useful to train your own models!
+You can find the available models in this folder (TBC), which will be updated when new models become available. Currently, we provide the models that lead to the final results of the paper, namely the nonlinear case with fixed $\sigma_{\rm u}$, but more models are in production. If you are interested in other models, please [reach out](https://github.com/dpiras/veloce/issues) or contact [Davide Piras](mailto:dr.davide.piras@gmail.com). Also note that it should be straightforward for you to train your own models using [CosmoPower](https://github.com/alessiospuriomancini/cosmopower).
 
 ## Contributing and contacts
 
