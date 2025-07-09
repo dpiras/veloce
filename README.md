@@ -9,7 +9,7 @@
   
 ![](https://img.shields.io/badge/Python-181717?style=plastic&logo=python)
 ![](https://img.shields.io/badge/Author-Davide%20Piras%20-181717?style=plastic)
-![](https://img.shields.io/badge/Installation-pip%20install%20coming_soon-181717?style=plastic)
+![](https://img.shields.io/badge/Installation-pip%20install%20velocemu-181717?style=plastic)
 [![arXiv](https://img.shields.io/badge/arXiv-2504.10453-b31b1b.svg)](https://arxiv.org/abs//2504.10453)
 
 </div>
