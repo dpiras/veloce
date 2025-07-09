@@ -10,7 +10,7 @@ PACKAGENAME = 'velocemu'
 
 setup(
     name='velocemu',
-    version="0.1.0",
+    version="0.1.1",
     author='Davide Piras',
     author_email='dr.davide.piras@gmail.com',
     description='The velocity covariance emulator',
