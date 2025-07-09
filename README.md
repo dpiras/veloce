@@ -22,7 +22,7 @@ Welcome to ``veloce``, the velocity power spectrum covariance emulator! We use a
 ## Installation
 
 To use the emulator and/or sample your supernovae posterior, follow these steps:
-1. (optional) `conda create -n veloce python=3.11 jupyter` (create a custom `conda` environment with `python 3.11`) 
+1. (optional) `conda create -n veloce python=3.11 jupyter ipython=8.20` (create a custom `conda` environment with `python 3.11`) 
 2. (optional) `conda activate veloce` (activate it)
 3. Install the package:
 
